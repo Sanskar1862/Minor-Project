@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+}
+.logo img{
+    max-width: 120px;
+    height: auto;
+}
+.navmenu{
+    display: flex;
+}
+.navmenu a{
+    color: #2c2c2c;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+.navmenu a:hover{
+    color: #EE1C47;
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+}
+.nav-icon i{
+    margin-right: 20px;
+    color: #2c2c2c;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+.nav-icon i:hover{
+    transform: scale(1.1);
+    color: #EE1C47;
+}
+#menu-icon{
+    font-size: 35px;
+    color: #2c2c2c;
+    z-index: 10001;
+    cursor: pointer;
+}
+section{
+    padding: 5% 10%;
+}
+.main-home{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/5580718/pexels-photo-5580718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+.main-text h5{
+    color: #EE1C47;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.main-text h1{
+    color: #000;
+    font-size: 65px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 6px 0 10px;
+}
+.main-text p{
+    color: #333c56;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.main-btn{
+    display: inline-block;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 2px solid #111;
+    padding: 12px 25px;
+    transition: all .42s ease;
+}
+.main-btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+.main-btn i{
+    vertical-align: middle;
+}
+.down-arrow{
+    position: absolute;
+    top: 85%;
+    right: 11%;
+}
+.down i{
+    font-size: 30px;
+    color: #2c2c2c;
+    border: 2px solid #2c2c2c;
+    border-radius: 50px;
+    padding: 12px 12px;
+}
+.down i:hover{
+    background-color: #2c2c2c;
+    color: #fff;
+    transition: all .42s ease;
+}
+header.sticky{
+    background: #fff;
+    padding: 20px 10%;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+
+/* trending-section-css */
+.center-text h2{
+    color: #111;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.center-text span{
+    color: #EE1C47;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 2rem;
+}
+.row{
+    position: relative;
+    transition: all .40s;
+    height: 200px;
+    width: 50%;
+}
+.row img{
+    width: 100%;
+    height: auto;
+    transition: all .40s;
+}
+.row img:hover{
+    transform: scale(0.9);
+}
+
+.ratting i{
+    color: #FF8C00;
+    font-size: 18px;
+}
+.price h4{
+    color: #111;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.price p{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* update-section-css */
+.up-center-text h2{
+    text-align: center;
+    color: #111;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.cart img{
+    width: 380px;
+    height: auto;
+    border-radius: 5px;
+}
+.update-cart{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, auto));
+    gap: 1rem;
+}
+.cart h5{
+    color: #636872;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.cart h4{
+    color: #111;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart p{
+    color: #707070;
+    font-size: 15px;
+    max-width: 380px;
+    line-height: 25px;
+    margin-bottom: 12px;
+}
+.cart h6{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+/* Responsive-css */
+@media(max-width:890px){
+    header{
+        padding: 20px 3%;
+        transition: .4s;
+    }
+}
+@media(max-width:630px){
+    .main-text h1{
+        font-size: 50px;
+        transition: .4s;
+    }
+    .main-text p{
+        font-size: 18px;
+        transition: .4s;
+    }
+    .main-btn{
+        padding: 10px 20px;
+        transition: .4s;
+    }
+}
+
+@media(max-width:750px){
+    .navmenu{
+        position: absolute;
+        top: 100%;
+        right:-100%;
+        width: 300px;
+        height: 130vh;
+        background: #edfff1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 120px 30px;
+        transition: all .42s;
+    }
+    .navmenu a{
+        display: block;
+        margin: 18px 0;
+    }
+    .navmenu.open{
+        right: 0;
+    }
+    
+}
+
+.img1{
+        height: 90%;
+        width:100%;
+    }
+
+.pd-name{
+    padding: 5px 5px  ;
+    margin: auto;
+}
+
+.pd-des{
+    padding: 5px 5px  ;
+    margin: auto;
+}
+
+.pd-rate{
+    padding: 5px 5px  ;
+    margin: auto;
+}
+
+.upload{
+    margin-left: 20%;
+    margin-right: 20%;
+    border:3px solid #000;
+}
+.submit-btn{
+    margin-left: 20%;
+    margin-right: 20%;
+    border:2px solid #000;
+    background-color: rgb(68, 221, 68);
+    padding:5px 10px;
+    align-items:center;
+}
+
+.upload p{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size:30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+  </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><img src="image/logo.png" alt=""></a>
+
+        <ul class="navmenu">
+            {% comment %} <li><a href="#">Home</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">Contact Us</a></li> {% endcomment %}
+        </ul>
+    </header>
+
+    <section class="main-home">
+        <div class="main-text">
+            <h1>Rent Equipments</h1>
+        </div>
+    </section>
+
+    <!-- trending-products-section -->
+    <section class="trending-product" id="trending">
+        <div class="center-text">
+            <h2>Our Trending products</h2>
+        </div>
+
+        <div class="products">
+            <div class="row">
+                <div class = "img1">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2021/3/PU/GD/JS/5230763/product-jpeg-500x500.jpg" alt="">
+                </div>
+
+                <div class="price">
+                    <h4>Sickle</h4>
+                    <p>Rs.25 per day</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "img1">
+                <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/31iqrdQqF6L.jpg "alt="">
+                </div>
+                <div class="price">
+                    <h4>Spade</h4>
+                    <p>Rs. 25 per day</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "img1">
+                <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/414A0eg7lNL.jpg" alt="">
+                </div>
+
+                <div class="price">
+                    <h4>Panga</h4>
+                    <p>Rs. 10 per day</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "img1">
+                <img src="https://5.imimg.com/data5/KJ/NL/MY-3469796/garden-wheel-barrow-500x500.jpg" alt="">
+                </div>
+                <div class="price">
+                    <h4>Wheel Barrow</h4>
+                    <p>Rs 100 per day</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "img1">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/OO/RV/NI/49469634/honda-petrol-water-pump-500x500.png" alt="">
+                </div>
+                <div class="price">
+                    <h4>Water Pump</h4>
+                    <p>RS 1000 per day</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class = "img1">
+                <img src="https://5.imimg.com/data5/GN/RW/RE/SELLER-2665528/disc-harrow-500x500.jpg" alt="">
+                </div>
+                <div class="price">
+                    <h4>Harrow</h4>
+                    <p>Rs 250 per day</p>
+                </div>
+            </div>
+
+           
+        </div>
+
+    </section>
+
+
+    <!-- update-news-section -->
+    <section class="Update-news" style="background-color: #F3F4F6;">
+        <div class="up-center-text">
+            <h2>New Updates</h2>
+        </div>
+
+        <div class="update-cart">
+            <div class="cart">
+                <h5>26 march 2023</h5>
+                <h4>Sugar getting even pricier poses new threat to food inflation</h4>
+                <p>Sugar, consumed in everything from chocolate to fizzy drinks and baked products, is becoming ever more expensive, raising costs for the industry and keeping up pressure on global food inflation.
+                    <br>
+                    Prices of refined sugar surged to the highest in more than a decade this week, while the raw variety is near to the costliest in over six years. Global supply is tightening, mainly because India, one of the top shippers, has cut exports after rains hurt the sugar cane crop and as more sweetener i ..
+                </p>
+            </div>
+
+            <div class="cart">
+                <h5>29 March 2023</h5>
+                <h4>Wheat procurement begins: Food ministry</h4>
+                <p>New Delhi: Procurement of Wheat for Rabi Marketing Season 2023-24 has started with the government procuring of 10,727 metric tonnes of wheat as on March 27 compared to last year’s nil procurement, the food ministry said in a statement on Tuesday.
+                </p>
+            </div>
+
+            <div class="cart">
+                <h5>26 March 2023</h5>
+                <h4>Urea imports to fall in 2022-23;<br> 74.86 lakh tonne imported till March 24: Govt</h4>
+                <p>India has imported 74.86 lakh tonne of urea till March 24 and is set to register a year-on-year decline this fiscal. In a written reply to the Rajya Sabha, Minister of State for Chemicals and Fertilisers Bhagwanth Khuba shared the details of the import of urea in the last five years.
+
+                    As per the data, the country has imported 74.86 lakh tonnes up to March 24 of the current financial year.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
