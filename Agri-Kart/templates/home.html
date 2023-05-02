@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <title>Document</title>
+  <style>
+    /* Set box-sizing property for all elements */
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.main {
+  {% comment %} padding-top: 100px; /* add a top margin to the main content */ {% endcomment %}
+  margin-top:50px;
+  min-height: 100vh;
+  background-image: url('https://images.pexels.com/photos/2131784/pexels-photo-2131784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Navigation bar */
+nav {
+  {% comment %} position:absolute; {% endcomment %}
+  z-index: 1;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333  ;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  overflow:hidden;
+  
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav .left {
+  margin-left: 10px;
+}
+
+nav .right {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+nav p {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  padding: 5px;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logout-button:hover {
+  color: rgb(216, 216, 168);
+}
+
+/* Content section 1 */
+.div1 {
+  
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.div1-name {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.div1-intro {
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.button1,
+.button2 {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #fff00;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.button1:hover,
+.button2:hover {
+  background-color: #FFFFE0;
+  color: #fff;
+}
+
+/* Content section 2 */
+.div2 {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 15px;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+.div2-intro {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.div2-content {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.collage {
+  max-width: 100%;
+  margin-right: 20px;
+}
+
+.div3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  background-color: burlywood;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-box h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.text-box p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.contact {
+  padding-top:20px;
+  margin:auto;
+  padding-left:50%;
+  text-align:center;
+  width:800px;
+  background-color: #f2f2f2;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact form input,
+.contact form textarea {
+  margin:auto;
+    display: block;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact form input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+{% block content %}
+  <div class="main" >
+    <header >
+      <nav>
+        <div class="left">
+          <p>Agri-Kart</p>
+        </div>
+        <div class="right">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact us</a>
+		  {% if user.is_authenticated %}
+		  <p>Welcome, {{ user.username }}!
+          <button class="logout-button"><a style="text-decoration:none;" href="{% url 'logout' %}">Logout</a></button>
+		  </p>
+		  {% else %}
+    	  <p><a style="text-decoration:none;" href="{% url 'login' %}">login</a></p>
+  		  {% endif %}
+        </div>
+      </nav>
+    </header>
+
+
+
+    <div class="div1" id="home">
+      <p class="div1-name">Welcome to Agri-Kart</p>
+      <p class="div1-intro">We are on a journey to revolutionalize farming in our country</p>
+    </div>
+
+    <div class="button-container">
+      <button class="button1"><a style="text-decoration:none;" href="{% url 'rent' %}">RENTEE</a></button>
+      <button class="button1"><a style="text-decoration:none;" href="{% url 'lessor' %}">LESSOR</a></button>
+      <button class="button2"><a  style="text-decoration:none;"href="{% url 'sell' %}">SELL</a></button>
+    </div>
+
+
+  </div>
+
+
+  <section id="about">
+    <div class="div2">
+      <div class="div2-intro">
+        <h1>Agri-Kart</h1>
+      </div>
+      <div class="div2-content">
+        <p>The affordability of expensive farming tools is a significant issue for numerous impoverished farmers. These
+          tools are critical for enhancing agricultural output, but their high price can act as a hindrance for
+          small-scale farmers. Consequently, many are compelled to stick to less efficient, traditional methods. To
+          tackle
+          this problem, governments and non-governmental organizations (NGOs) can provide subsidies or low-interest
+          loans
+          to farmers for buying farming tools. Additionally, introducing alternative, cost-effective technologies could
+          also help in enhancing productivity without putting a financial burden on farmers.</p>
+      </div>
+    </div>
+
+    <div class="div2">
+      <div class="div2-intro">
+        <h1>How are we doing this?</h1>
+      </div>
+      <div class="div2-content">
+        <p>Our website serves as an online platform for farmers to conveniently buy, sell or rent agricultural tools by
+          interacting with sellers. The platform aims to facilitate easy communication and transactions between farmers
+          and sellers. Our price comparison feature allows farmers to compare prices of the products being offered,
+          ensuring they get the best possible price for their needs. This feature not only benefits farmers, but also
+          helps sellers to remain competitive in the market. Our goal is to make agricultural transactions more
+          accessible, efficient and cost-effective for all parties involved. By using our platform, farmers can easily
+          find the tools they need and sellers can reach out to a wider audience. Overall, we aim to simplify the
+          agricultural tool market and promote growth in the industry.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="div3">
+    <div class="wrapper">
+      <img class="collage" src="/static/collage.png" alt="">
+      <div class="text-box">
+        <h2>Why Agri-Kart?</h2>
+        <p>According to the World Bank, about 80% of the world's farmers are small-scale farmers who rely on subsistence
+          farming to survive. Many of these farmers are located in developing countries, where poverty is widespread,
+          and access to capital and resources is limited.
+          <br>
+          <br>
+
+          A significant issue facing poor farmers is their inability to afford essential farming tools. Farming tools
+          such as plows, tractors, and fertilizers are crucial in achieving efficient and productive farming. However,
+          these tools are often expensive, making them inaccessible to farmers who lack the financial means to purchase
+          them.
+          <br>
+          <br>Without these tools, poor farmers are forced to rely on traditional farming methods, which are
+          labor-intensive and yield lower crop production. As a result, they struggle to make ends meet and provide for
+          their families. The lack of farming tools also leads to a vicious cycle of poverty, where poor crop yields
+          result in limited income and an inability to purchase better equipment. This further perpetuates their poverty
+          and dependence on subsistence farming. Moreover, the inability to afford farming tools exacerbates the problem
+          of food insecurity in impoverished areas. Insufficient food production results in food shortages and
+          inadequate nutrition, which negatively impacts the health and well-being of communities.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+  
+  <script src="js.js"></script>
+  {% endblock %}
+</body>
+
+</html>

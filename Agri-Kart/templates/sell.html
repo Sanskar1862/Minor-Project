@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Kart  - SELL</title>
+    <link rel="stylesheet" href="/static/sell.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="right">
+               
+            </div>
+        </nav>
+        <div class="main-text" style="height: 10vh;">
+            <h1 style="color: rgb(7, 7, 7);">Sell Equipments</h1>
+        </div>
+    </header>
+    <section class="main-home" style="height: 50vh;">
+        
+    </section>
+
+    <!-- <h2 class="heading" id="about">Equipments</h2> -->
+
+    <section class="row">
+
+
+        <div class="column">
+            <img class="image" src="/static/pr-1.jpg" alt="Image 1">
+            <div class="price">
+                <h4>Tractor</h4>
+                <p>Rs 100000</p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <img class="image" src="/static/pr-2.jpg" alt="Image 2">
+            <div class="price">
+                <h4>Harvestor</h4>
+                <p>Rs 500000 </p>
+            </div>
+
+        </div>
+
+
+        <div class="column">
+            <img class="image" src="/static/pr-3.jpg" alt="Image 3" >
+            <div class="price">
+                <h4>Fertilizer Spreader</h4>
+                <p>Rs 10000</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="row">
+
+        <div class="column">
+            <img class="image" src="/static/pr-4.jpg" alt="Image 1">
+            <div class="price">
+                <h4>Harrows</h4>
+                <p>Rs 1000</p>
+            </div>
+
+        </div>
+
+
+        <div class="column">
+            <img class="image" src="/static/pr-5.jpg" alt="Image 2" >
+            <div class="price">
+                <h4>Seeders</h4>
+                <p>Rs 50000</p>
+            </div>
+
+        </div>
+
+
+        <div class="column">
+            <img class="image" src="/static/pr-6.jpg" alt="Image 3" >
+            <div class="price">
+                <h4>Balers</h4>
+                <p>Rs 60000</p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg">
+        </div>
+    </div>
+
+
+    <hr>
+
+
+
+    <script>
+        const navbar = document.querySelector('.navbar');
+        const links = document.querySelectorAll('.navbar a');
+        const text = document.createElement('div');
+        text.classList.add('text');
+        text.textContent = 'Agri-Kart';
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+                links.forEach(link => link.classList.add('scrolled'));
+                navbar.appendChild(text);
+            } else {
+                navbar.classList.remove('scrolled');
+                links.forEach(link => link.classList.remove('scrolled'));
+                navbar.removeChild(text);
+            }
+        });
+
+
+        function openModal(src) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("modalImg").src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
